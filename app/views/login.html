@@ -1,0 +1,33 @@
+<div class="login-page">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <img src="images/logo.png" class="user-avatar img-responsive" />
+        <form name="form" ng-submit="form.$valid && login()" novalidate>
+            <div class="form-groups">
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
+                    <label for="username">Usuário</label>
+                    <input type="text" name="username" class="form-control input-lg" ng-model="username" maxlength="30" required>
+                    <div ng-messages="form.$submitted && form.username.$error" class="help-block">
+                        <div ng-message="required">Campo nome é obrigatório</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" class="form-control input-lg" ng-model="password" maxlength="30" required>
+                    <div ng-messages="form.$submitted && form.password.$error" class="help-block">
+                        <div ng-message="required">Campo senha é obrigatório</div>
+                    </div>
+                </div>
+                <div class="remember">
+                    <label class="checkbox1" for="Option">
+                        <input id="Option" type="checkbox" class="" ng-model="rememberMe">
+                        <span class="btn-default"></span>
+                        Continuar conectado
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary-login col-xs-12">ENTRAR</button>
+            </div>
+        </form>
+    </div>
+</div>

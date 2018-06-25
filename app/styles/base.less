@@ -1,0 +1,127 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html, body {
+    overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 100px #000000; 
+    border-radius: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #0f3e5a; 
+    border-radius: 15px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #0f3e5a; 
+}
+  
+.no-padding {
+    padding: 0;
+}
+
+.ui-base {
+    background: #000;
+    min-height: 100vh;
+}
+
+.spiner {
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.sk-spinner-three-bounce div {
+    color: #f6b642;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.sk-spinner-three-bounce .sk-bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.sk-spinner-three-bounce .sk-bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+.keyframes(@name) {
+    @-webkit-keyframes @name {
+        0%,
+        80%,
+        100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        }
+        40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        }
+    }
+}
+
+.keyframes(sk-threeBounceDelay);
+
+#loading-bar .bar {
+    background: #f6b642 !important;
+    height: 4px !important;
+}
+
+#loading-bar .peg {
+    -moz-box-shadow: #f6b642 1px 0 6px 1px !important;
+    -ms-box-shadow: #f6b642 1px 0 6px 1px !important;
+    -webkit-box-shadow: #f6b642 1px 0 6px 1px !important;
+    box-shadow: #f6b642 1px 0 6px 1px !important;
+}
+
+#loading-bar-container > div {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.select-default {
+    background-color: transparent;
+    color: #fff;
+    border:1px solid #ddd;
+ }
+
+ .select-default option {
+    background-color: #041926;
+    color: #fff;
+    border:1px solid #ddd;
+ }
+
+ .total-score {
+    color: #2ba078;
+}
+
+.partial-score {
+    color: #f6b642;
+}
+
+.unpointed {
+    color: #f7350a;
+}

@@ -1,0 +1,29 @@
+<div class="login-page">
+    <div class="col-xs-12 col-sm-7 col-md-5 col-lg-4">
+        <div class="instructional-text">
+            <h3>
+                <i class="fa fa-lock fa-4x"></i>
+            </h3>
+            <h2>Esqueceu a senha?</h2>
+            <p>Informe seu e-mail para redefinir sua senha.</p>
+        </div>
+        <form name="form" ng-submit="form.$valid && resetarSenha()" novalidate>
+            <div class="form-groups">
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.email.$invalid }">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" class="form-control input-lg" ng-model="email" maxlength="30" required>
+                    <div ng-messages="form.$submitted && form.email.$error" class="help-block">
+                        <div ng-message="required" ng-show="form.email.$error.required">Campo e-mail é obrigatório</div>
+                        <div ng-message="email" ng-show="form.email.$error.email">Insira um e-mail válido!</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary-login col-xs-12">RESETAR SENHA</button>
+            </div>
+            <a ui-sref="login" class="forgot-password">
+                <b>Lembrei minha senha!</b>
+            </a>
+        </form>
+    </div>
+</div>

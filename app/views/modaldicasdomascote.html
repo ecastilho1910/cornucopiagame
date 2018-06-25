@@ -1,0 +1,20 @@
+<div class="modal-header modalmascoteDivHeader">
+    <span class="modal-regulation-title">{{ modalRandom.titulo }}</span>
+</div>
+<div class="modal-body">    
+    <div class="modal-regulation-text">
+        <div class="modalmascoteDivImg">
+            <img ng-src="{{ modalRandom.urlPath }}" style="width: 270px;"> 
+        </div>
+        <div>
+            <p style="font-size: 22px;" class="saudacoes"> {{ modalRandom.saudacao }}</p>
+            <br>
+            {{ modalRandom.infoDoEspecialista }}
+            <br><br>
+            DICA: {{ modalRandom.descricaoRegulamento }} 
+        </div>        
+    </div>
+</div>
+<div class="modal-footer">
+    <a class="btn btn-primary" type="button" ng-click="fecharRegulamento()">BOA SORTE</a>
+</div>

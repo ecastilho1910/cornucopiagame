@@ -1,0 +1,36 @@
+<div class="login-page">
+    <div class="col-xs-12 col-sm-7 col-md-5 col-lg-4">
+        <div class="instructional-text">
+            <h3>
+                <i class="fa fa-key fa-4x"></i>
+            </h3>
+            <h2>Redefinir senha!</h2>
+            <p>Informe uma nova senha e confirme a nova senha.</p>
+        </div>
+        <form name="form" ng-submit="form.$valid && redefinirSenha()" novalidate>
+            <div class="form-groups">
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.newPassword.$invalid }">
+                    <label for="newPassword">Nova senha</label>
+                    <input type="password" name="newPassword" class="form-control input-lg" ng-model="newPassword" maxlength="30" required>
+                    <div ng-messages="form.$submitted && form.newPassword.$error" class="help-block">
+                        <div ng-message="required">Campo senha é obrigatório</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.confirmPassword.$invalid }">
+                    <label for="confirmPassword">Confirmar senha</label>
+                    <input type="password" name="confirmPassword" class="form-control input-lg" ng-model="confirmPassword" maxlength="30" compare-to="newPassword" required>
+                    <div ng-messages="form.$submitted && form.confirmPassword.$error" class="help-block">
+                        <div ng-message="required">Campo senha é obrigatório</div>
+                        <div ng-message="compareTo">As senhas não conferem!</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary-login col-xs-12">REDEFINIR SENHA</button>
+            </div>
+            <a ui-sref="login" class="forgot-password">
+                <b>Lembrei minha senha!</b>
+            </a>
+        </form>
+    </div>
+</div>

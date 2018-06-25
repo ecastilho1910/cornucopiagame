@@ -1,0 +1,57 @@
+.login-page {
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	&:before {
+		content: '';
+		background-image: url('../../images/fundo.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	label {
+		color: #fff;
+	}
+}
+
+.remember {
+	margin-bottom: 10px;
+	.checkbox1 {
+		padding-right: 0;
+	}
+	span.pass {
+		float: right;
+		padding-top: 2px;
+	}
+}
+
+.btn-primary-login {
+    color: #fff;
+    background-color: #31b484;
+    border-color: #2ca075;
+}
+
+.btn-primary-login:hover {
+    color: #fff;
+    background-color: #31b484;
+    border-color: #2ca075;
+}
+
+.btn-primary-login:hover, .btn-primary-login:focus, .btn-primary-login.focus, .btn-primary-login:active, .btn-primary-login.active {
+    color: #292b1e;
+    background-color: #f6b642;
+    border-color: #c38514;
+}
+
+.forgot-password {
+	font-weight: bold;
+	text-decoration: none !important;
+}
