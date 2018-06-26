@@ -84,7 +84,7 @@ gulp.task('copy', function () {
         'app/views/**',
         'app/404.html',
         'app/menu.html',
-        'app/favicon.ico'
+        'app/favicon-hacking.ico'
     ], { base: 'app' })
         .pipe(gulp.dest('deploy'));
 

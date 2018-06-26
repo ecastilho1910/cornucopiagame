@@ -78,7 +78,8 @@ angular.module('app', [
         'ngAnimate',
         'toastr',
         'angular-loading-bar',
-        'timer'
+        'timer',
+        'mgo-angular-wizard'
     ]).constant('constant', {
         'apiBase': 'http://dbo.db1.com.br:8080'
     }).factory('authInterceptor', authInterceptor)
