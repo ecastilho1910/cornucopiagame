@@ -42,7 +42,7 @@ function homeCtrl($scope, $q, $timeout, $uibModal, rankingService, contaService)
         var d = $q.defer()
         $timeout(function(){
             return d.resolve(true);
-        }, 2000);
+        }, 1000);
         return d.promise;
     }
 
