@@ -20,10 +20,27 @@ angular.module('app')
         }
     });
 
-function homeCtrl($scope, $q, $timeout, $uibModal, rankingService, contaService) {
+function homeCtrl($scope, $q, $timeout, $uibModal, rankingService, contaService, WizardHandler, toastr) {
+   
+    var wizardInit = true;
+    $scope.$on('wizard:stepChanged', function(event, data) {
+       
+        //step shoose deck cards
+        if(data.index === 3){           
+           var filtered = _.where($scope.deckCards, {ticked: true});
+           if(filtered.length === 0){
+                toastr.error('Please, choose one card of deck.');     
+                return false;
+           }
+        } 
 
-    $scope.$on('wizard:stepChanged',function(event, args) {
-        console.log(args);
+        if (wizardInit) {
+            wizardInit = false;
+            setTimeout(function() {
+                WizardHandler.wizard().goTo(0);
+                $scope.$apply();
+            });
+        }
     });
 
     $scope.enterValidation = function(){
@@ -39,12 +56,21 @@ function homeCtrl($scope, $q, $timeout, $uibModal, rankingService, contaService)
     }
     //example using promises
     $scope.exitValidation = function(){
-        var d = $q.defer()
+        var d = $q.defer();
         $timeout(function(){
             return d.resolve(true);
         }, 1000);
         return d.promise;
     }
+
+
+    $scope.deckCards = [
+        {	icon: "<i class='fa fa-lg fa-code' style='color: #7a747b;'></i>",  maker: "Data validation and encoding",	ticked: false	},
+        {	icon: "<i class='fa fa-lg fa-user-secret' style='color: #5f8ea0;'></i>", maker: "Authentication",	ticked: false	},
+        {	icon: "<i class='fa fa-lg fa-cogs' style='color: #5b906e;'></i>", maker: "Session management",	ticked: false	},
+        {	icon: "<i class='fa fa-lg fa-user-times' style='color: #b59b6c;'></i>",	maker: "Authorization",	ticked: false	},
+        {	icon: "<i class='fa fa-lg fa-unlock-alt' style='color: #895091;'></i>",	maker: "Cryptography",	ticked: false	}
+   ];
 
 
 

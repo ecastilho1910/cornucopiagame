@@ -16,6 +16,8 @@
         "serve-static": "^1.13.2"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.1.0",
+        "angular-multi-select": "^7.4.6",
         "npm": "^5.8.0"
     }
 }

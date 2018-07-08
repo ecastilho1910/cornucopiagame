@@ -109,10 +109,37 @@
                         <br />
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="color:#fff">Deck Of Cards</label>
-                            <input style=" background-color: transparent; color: #256728; " type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Which deck of cards do you want to play?">
+                            <div
+                                isteven-multi-select
+                                input-model="deckCards"
+                                output-model="outputBrowsers"
+                                button-label="icon name"
+                                item-label="icon name maker"
+                                tick-property="ticked">
+                            </div>
+                            <!-- <input style=" background-color: transparent; color: #256728; " type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Which deck of cards do you want to play?"> -->
                         </div>
                         <br />
                         <br />
+
+
+
+<!-- 
+
+                        <div
+                            isteven-multi-select
+                            input-model="deckCards"
+                            output-model="outputBrowsers"
+                            button-label="icon name"
+                            item-label="icon name maker"
+                            tick-property="ticked">
+                        </div>
+                        <br />
+                        <br /> -->
+
+
+
+
                         <div class="text-mono">
                             <a href="#!" wz-previous class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                                 oOps, I want to change a player.

@@ -79,7 +79,8 @@ angular.module('app', [
         'toastr',
         'angular-loading-bar',
         'timer',
-        'mgo-angular-wizard'
+        'mgo-angular-wizard',
+        'isteven-multi-select'
     ]).constant('constant', {
         'apiBase': 'http://dbo.db1.com.br:8080'
     }).factory('authInterceptor', authInterceptor)
