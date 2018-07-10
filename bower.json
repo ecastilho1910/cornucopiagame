@@ -1,9 +1,9 @@
 {
-  "name": "bolao",
-  "description": "bolão da copa",
+  "name": "cornucopia",
+  "description": "cornucopia",
   "main": "index.html",
   "authors": [
-    "henrikesilverio <henrikesilverio@users.noreply.github.com>"
+    "ecastilho1910 <ecastilho1910@users.noreply.github.com>"
   ],
   "license": "MIT",
   "homepage": "http://localhost",
