@@ -1,7 +1,7 @@
 <wizard on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position="top">
 
     <!-- ETAPA 1 -->
-    <wz-step wz-title="Initial" canexit="exitValidation">
+    <wz-step wz-title="Initial">
 
         <div class="jumbotron bg-transparent mb-0 radius-0" style="background-color: #000;">
             <div class="container">
@@ -42,7 +42,7 @@
     </wz-step>
 
     <!-- ETAPA 2 -->
-    <wz-step wz-title="SET-UP PLAYERS" canenter="enterValidation">
+    <wz-step wz-title="SET-UP PLAYERS">
 
         <div class="jumbotron bg-transparent mb-0 radius-0" style="background-color: #000;">
             <div class="container">
@@ -53,20 +53,23 @@
                         </h1>
                         <div class="lead mb-3 text-mono text-success">Don´t be afraid, we are not a moster, we gonna help you guys.</div>
                         <br />
-                        <br />
-                        <br />
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="color:#fff">Player's name</label>
-                            <input style=" background-color: transparent; color: #256728; " type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Who´s gonna play?">
+                            <div
+                                isteven-multi-select
+                                input-model="players"
+                                output-model="outputDecks"
+                                button-label="icon name"
+                                item-label="icon name"
+                                tick-property="selected">
+                            </div>                            
                         </div>
-                        <br />
-                        <br />
                         <br />
                         <div class="text-mono">
                             <a href="#!" wz-previous class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                                 Sorry, I give up.
                             </a>
-                            <a href="#!" wz-next title="Download Theme" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
+                            <a href="#!" ng-click="changeStepPlayersToDeckSuitTs()" title="Download Theme" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
                                 Let´s choose the deck of cards.
                             </a>
                         </div>
@@ -93,58 +96,35 @@
                                 OWASP Secure Coding Practices
                             </a>, but with additional consideration of sections in the OWASP Application Security Development.
                             These provided five suits:
-                        </div>
-                        <br />
+                        </div>                        
                         <div class="lead mb-3 text-mono text-success" style="padding-left: 30px;">
-                            <span style="color: rgb(78, 78, 78)">- Data validation and encoding </span>
+                            <span style="color: rgb(78, 78, 78); font-size:16px;">- Data validation and encoding </span>
                             <br />
-                            <span style="color: #5f8ea0"> - Authentication</span>
+                            <span style="color: #5f8ea0; font-size:16px;"> - Authentication</span>
                             <br />
-                            <span style="color: #5b906e"> - Session management</span>
+                            <span style="color: #5b906e; font-size:16px;"> - Session management</span>
                             <br />
-                            <span style="color: #b59b6c"> - Authorization</span>
+                            <span style="color: #b59b6c; font-size:16px;"> - Authorization</span>
                             <br />
-                            <span style="color: #593e5d"> - Cryptography</span>
-                        </div>
-                        <br />
+                            <span style="color: #593e5d; font-size:16px;"> - Cryptography</span>
+                        </div>                        
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="color:#fff">Deck Of Cards</label>
                             <div
                                 isteven-multi-select
                                 input-model="deckCards"
-                                output-model="outputBrowsers"
+                                output-model="outputDecks"
                                 button-label="icon name"
-                                item-label="icon name maker"
-                                tick-property="ticked">
-                            </div>
-                            <!-- <input style=" background-color: transparent; color: #256728; " type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Which deck of cards do you want to play?"> -->
+                                item-label="icon name"
+                                tick-property="selected">
+                            </div>                            
                         </div>
-                        <br />
-                        <br />
-
-
-
-<!-- 
-
-                        <div
-                            isteven-multi-select
-                            input-model="deckCards"
-                            output-model="outputBrowsers"
-                            button-label="icon name"
-                            item-label="icon name maker"
-                            tick-property="ticked">
-                        </div>
-                        <br />
-                        <br /> -->
-
-
-
-
+                        <br />                        
                         <div class="text-mono">
                             <a href="#!" wz-previous class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                                 oOps, I want to change a player.
                             </a>
-                            <a href="#!" wz-next title="Download Theme" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
+                            <a href="#!" ng-click="changeStepDeckSuitToStartTheGame()" title="Download Theme" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
                                 Let´s the game begin.
                             </a>
                         </div>
@@ -171,7 +151,7 @@
                     </div>
 
                     <!-- DECK Validação de dados -->
-                    <div class="panel-game panel-default" style="background-color: black;">
+                    <div class="panel-game panel-default" ng-if="showDeckDataValidation" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
                                 <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
@@ -286,7 +266,7 @@
                     </div>
 
                     <!-- DECK Gerenciamento de Sessão -->
-                    <div class="panel-game panel-default" style="background-color: black;">
+                    <div class="panel-game panel-default" ng-if="showDeckSessionManagement" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
                                 <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
@@ -401,7 +381,7 @@
                     </div>
 
                     <!-- DECK Controle de Acesso -->
-                    <div class="panel-game panel-default" style="background-color: black;">
+                    <div class="panel-game panel-default" ng-if="showDeckAuthorization" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
                                 <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
@@ -516,7 +496,7 @@
                     </div>
 
                     <!-- DECK Autenticação e Gerenciamento de Credenciais -->
-                    <div class="panel-game panel-default" style="background-color: black;">
+                    <div class="panel-game panel-default" ng-if="showDeckAuthentication" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
                                 <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
@@ -631,7 +611,7 @@
                     </div>
 
                     <!-- DECK Praticas de Criptografia -->
-                    <div class="panel-game panel-default" style="background-color: black;">
+                    <div class="panel-game panel-default" ng-if="showDeckCryptography" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
                                 <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
