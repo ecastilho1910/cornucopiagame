@@ -1,0 +1,24 @@
+<div class="modal-header modalmascoteDivHeader">
+    <span class="modal-regulation-title">{{ modalRandom.title }}</span>
+</div>
+<div class="modal-body">    
+    <div class="modal-regulation-text">
+        <div class="modalmascoteDivImg" style="float: left;">
+            <img ng-src="{{ modalRandom.urlPath }}" style="width: 145px;"> 
+        </div>
+        <div>
+            <p style="font-size: 22px;" class="saudacoes"> CARD: <string> {{ modalRandom.card }} </string></p>
+            <br>
+                EXPLAIN: {{ modalRandom.explain }}
+            <br>
+                EXAMPLE: {{ modalRandom.example }} 
+        </div>
+        <div class="form-groupv">            
+            <input type="text" name="feedbackteam" class="form-control input-lg text-left" placeholder="Team feebback"
+            maxlength="1000" ng-model="modalRandom.feedbackteam" style="background-color:transparent;color:white;font-size:12px;">
+        </div>     
+    </div>
+</div>
+<div class="modal-footer">
+    <a class="btn btn-primary-login" type="button" ng-click="fecharRegulamento(modalRandom)">GOOD LUCK</a>
+</div>

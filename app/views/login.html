@@ -4,29 +4,22 @@
         <form name="form" ng-submit="form.$valid && login()" novalidate>
             <div class="form-groups">
                 <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
-                    <label for="username">Usuário</label>
+                    <label for="username">User</label>
                     <input type="text" name="username" class="form-control input-lg" ng-model="username" maxlength="30" required>
                     <div ng-messages="form.$submitted && form.username.$error" class="help-block">
-                        <div ng-message="required">Campo nome é obrigatório</div>
+                        <div ng-message="required">Please enter your user</div>
                     </div>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
-                    <label for="password">Senha</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" class="form-control input-lg" ng-model="password" maxlength="30" required>
                     <div ng-messages="form.$submitted && form.password.$error" class="help-block">
-                        <div ng-message="required">Campo senha é obrigatório</div>
+                        <div ng-message="required">Please enter your password</div>
                     </div>
-                </div>
-                <div class="remember">
-                    <label class="checkbox1" for="Option">
-                        <input id="Option" type="checkbox" class="" ng-model="rememberMe">
-                        <span class="btn-default"></span>
-                        Continuar conectado
-                    </label>
-                </div>
+                </div>                
             </div>
             <div>
-                <button type="submit" class="btn btn-lg btn-primary-login col-xs-12">ENTRAR</button>
+                <button type="submit" class="btn btn-lg btn-primary-login col-xs-12">LOGIN</button>
             </div>
         </form>
     </div>

@@ -55,14 +55,9 @@
                         <br />
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="color:#fff">Player's name</label>
-                            <div
-                                isteven-multi-select
-                                input-model="players"
-                                output-model="outputDecks"
-                                button-label="icon name"
-                                item-label="icon name"
+                            <div isteven-multi-select input-model="players" output-model="outputDecks" button-label="icon name" item-label="icon name"
                                 tick-property="selected">
-                            </div>                            
+                            </div>
                         </div>
                         <br />
                         <div class="text-mono">
@@ -96,7 +91,7 @@
                                 OWASP Secure Coding Practices
                             </a>, but with additional consideration of sections in the OWASP Application Security Development.
                             These provided five suits:
-                        </div>                        
+                        </div>
                         <div class="lead mb-3 text-mono text-success" style="padding-left: 30px;">
                             <span style="color: rgb(78, 78, 78); font-size:16px;">- Data validation and encoding </span>
                             <br />
@@ -107,19 +102,14 @@
                             <span style="color: #b59b6c; font-size:16px;"> - Authorization</span>
                             <br />
                             <span style="color: #593e5d; font-size:16px;"> - Cryptography</span>
-                        </div>                        
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="color:#fff">Deck Of Cards</label>
-                            <div
-                                isteven-multi-select
-                                input-model="deckCards"
-                                output-model="outputDecks"
-                                button-label="icon name"
-                                item-label="icon name"
+                            <div isteven-multi-select input-model="deckCards" output-model="outputDecks" button-label="icon name" item-label="icon name"
                                 tick-property="selected">
-                            </div>                            
+                            </div>
                         </div>
-                        <br />                        
+                        <br />
                         <div class="text-mono">
                             <a href="#!" wz-previous class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                                 oOps, I want to change a player.
@@ -145,583 +135,177 @@
                         <h1 class="display-2" style="color:#fff">Play!!!
                             <span class="vim-caret"></span>
                         </h1>
-                        <div class="lead mb-3 text-mono text-success">The player "Emerson" gonna star the game.</div>
-                        <br />
-                        <br />
+                        <div class="lead mb-3 text-mono text-success">... and let the games begin.</div>
                     </div>
 
-                    <!-- DECK Validação de dados -->
+                    <!-- DECK Validação de dados Data validation and encoding-->
                     <div class="panel-game panel-default" ng-if="showDeckDataValidation" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
-                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
+                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" class="atitledeck">
                                     <i class="fa fa-lg fa-info" style="color: gray;"></i>
-                                    <b>Validação de Dados</b>
+                                    <b style="color: gray;">Validação de dados de entrada e codificação de dados de saída</b>
                                 </a>
                             </div>
                         </div>
                         <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
+                            <div ng-repeat="deckdadavalidation in deckSuits.dadavalidation" 
+                                class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia"
+                                style="border: 1px gray solid;">
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px gray solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Validação de dados de entrada e codificação de dados de saída.
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud a shdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
+                                <a ng-click="showCardExplain(deckdadavalidation)" class="ahrefcarddeck">
 
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uash ud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
+                                    <div class="card-title">
+                                        <p> {{ deckdadavalidation.name }} </p>
+                                    </div>
+                                    <div class="card-number">
+                                        <p> <span class="fa fa fa-code"></span> {{ deckdadavalidation.card }} </p>
+                                    </div>
+                                    <div class="card-description">
+                                        <p> {{ deckdadavalidation.description }} </p>
+                                    </div>                                
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px gray solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Validação de dados de entrada e codificação de dados de saída.
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud a shdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uash ud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px gray solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Validação de dados de entrada e codificação de dados de saída.
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud a shdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uash ud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px gray solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Validação de dados de entrada e codificação de dados de saída.
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud a shdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uash ud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- DECK Gerenciamento de Sessão -->
-                    <div class="panel-game panel-default" ng-if="showDeckSessionManagement" style="background-color: black;">
-                        <div class="panel-heading">
-                            <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
-                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
-                                    <i class="fa fa-lg fa-info" style="color: #5b906e;"></i>
-                                    <b>Gerenciamento de Sessão</b>
                                 </a>
+
                             </div>
-                        </div>
-                        <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5b906e solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Gerenciamento de Sessões
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ash doh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud a ushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5b906e solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Gerenciamento de Sessões
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ash doh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud a ushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5b906e solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Gerenciamento de Sessões
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ash doh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud a ushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5b906e solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Gerenciamento de Sessões
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ash doh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud a ushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
-                    <!-- DECK Controle de Acesso -->
-                    <div class="panel-game panel-default" ng-if="showDeckAuthorization" style="background-color: black;">
-                        <div class="panel-heading">
-                            <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
-                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
-                                    <i class="fa fa-lg fa-info" style="color: #b59b6c;"></i>
-                                    <b>Controle de Acesso</b>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #b59b6c solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Controle de Acesso
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #b59b6c solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Controle de Acesso
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #b59b6c solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Controle de Acesso
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #b59b6c solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Controle de Acesso
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- DECK Autenticação e Gerenciamento de Credenciais -->
+                    <!-- DECK Autenticação e Gerenciamento de Credenciais  Authentication-->
                     <div class="panel-game panel-default" ng-if="showDeckAuthentication" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
-                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
-                                    <i class="fa fa-lg fa-info" style="color: #5f8ea0;"></i>
-                                    <b>Autenticação e Gerenciamento de Credenciais</b>
+                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" class="atitledeck">
+                                    <i class="fa fa-lg fa-user-secret" style="color: #5f8ea0;"></i>
+                                    <b style="color: #5f8ea0;">Autenticação e Gerenciamento de Credenciais</b>
                                 </a>
                             </div>
                         </div>
                         <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
+                            
+                            <div ng-repeat="deckauthentication in deckSuits.authentication" 
+                                class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia"
+                                style="border: 1px #5f8ea0 solid;">
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5f8ea0 solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Autenticação e Gerenciamento de Credenciais
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
+                                <a ng-click="showCardExplain(deckauthentication)" class="ahrefcarddeck">
 
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
+                                    <div class="card-title">
+                                        <p> {{ deckauthentication.name }} </p>
+                                    </div>
+                                    <div class="card-number">
+                                        <p> <span class="fa fa fa-code"></span> {{ deckauthentication.card }} </p>
+                                    </div>
+                                    <div class="card-description">
+                                        <p> {{ deckauthentication.description }} </p>
+                                    </div>                                
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5f8ea0 solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Autenticação e Gerenciamento de Credenciais
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
+                                </a>
 
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5f8ea0 solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Autenticação e Gerenciamento de Credenciais
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #5f8ea0 solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Autenticação e Gerenciamento de Credenciais
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <!-- DECK Praticas de Criptografia -->
-                    <div class="panel-game panel-default" ng-if="showDeckCryptography" style="background-color: black;">
+                    <!-- DECK Gerenciamento de Sessão Session Management-->
+                    <div class="panel-game panel-default" ng-if="showDeckSessionManagement" style="background-color: black;">
                         <div class="panel-heading">
                             <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
-                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" title="Confira aqui as dicas do especialista.">
-                                    <i class="fa fa-lg fa-info" style="color: #593e5d;"></i>
-                                    <b>Praticas de Criptografia</b>
+                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" class="atitledeck">
+                                    <i class="fa fa-lg fa-info" style="color: #5b906e;"></i>
+                                    <b style="color: #5b906e;">Gerenciamento de Sessão</b>
                                 </a>
                             </div>
                         </div>
                         <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #593e5d solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Praticas de Criptografia
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
+                            <div ng-repeat="decksessionmanagement in deckSuits.sessionmanagement" 
+                                class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia"
+                                style="border: 1px #5b906e solid;">
 
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
+                                <a ng-click="showCardExplain(decksessionmanagement)" class="ahrefcarddeck">
+
+                                    <div class="card-title">
+                                        <p> {{ decksessionmanagement.name }} </p>
+                                    </div>
+                                    <div class="card-number">
+                                        <p> <span class="fa fa fa-code"></span> {{ decksessionmanagement.card }} </p>
+                                    </div>
+                                    <div class="card-description">
+                                        <p> {{ decksessionmanagement.description }} </p>
+                                    </div>                                
+
+                                </a>
+
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #593e5d solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Praticas de Criptografia
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
+                    <!-- DECK Controle de Acesso Authorization-->
+                    <div class="panel-game panel-default" ng-if="showDeckAuthorization" style="background-color: black;">
+                        <div class="panel-heading">
+                            <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
+                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" class="atitledeck">
+                                    <i class="fa fa-lg fa-info" style="color: #b59b6c;"></i>
+                                    <b style="color: #b59b6c;">Controle de Acesso</b>
+                                </a>
                             </div>
+                        </div>
+                        <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #593e5d solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Praticas de Criptografia
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
 
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
+                            <div ng-repeat="deckauthorization in deckSuits.authorization" 
+                                class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia"
+                                style="border: 1px #b59b6c solid;">
+
+                                <a ng-click="showCardExplain(deckauthorization)" class="ahrefcarddeck">
+
+                                    <div class="card-title">
+                                        <p> {{ deckauthorization.name }} </p>
+                                    </div>
+                                    <div class="card-number">
+                                        <p> <span class="fa fa fa-code"></span> {{ deckauthorization.card }} </p>
+                                    </div>
+                                    <div class="card-description">
+                                        <p> {{ deckauthorization.description }} </p>
+                                    </div>                                
+
+                                </a>
+
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia" style="border: 1px #593e5d solid;">
-                                <div class="card-title">
-                                    <p>
-                                        Praticas de Criptografia
-                                    </p>
-                                </div>
-                                <div class="card-number">
-                                    <p>
-                                        <span class="fa fa fa-code"></span> A
-                                    </p>
-                                </div>
-                                <div class="card-description">
-                                    <p>
-                                        Ataque hacker udhas das uodhas duhasu dasud hashodhsu ds oduahs dashud ashdoh asohd asudh asoduash uodhasd uoshdh asuodh
-                                        asohd duoahso duahsud ahsud auoshdouash dohsa
-                                    </p>
-
-                                </div>
-                                <div class="card-exemples">
-                                    <p>
-                                        EX: dauhsd ashd asd aisuhduas ghduasd uasg duasgd uiasgbd d auisd uashud aushd asuodh ouiash udoasih da us duh asuod dff
-                                    </p>
-                                </div>
+                    <!-- DECK Praticas de Criptografia Cryptography -->
+                    <div class="panel-game panel-default" ng-if="showDeckCryptography" style="background-color: black;">
+                        <div class="panel-heading">
+                            <div class="col-xs-6 col-sm-6 game-tips" style="padding-left: 7px;">
+                                <a ng-click="mostrarDicaDoMascote(jogo.resumoPrevio)" class="atitledeck">
+                                    <i class="fa fa-lg fa-info" style="color: #593e5d;"></i>
+                                    <b style="color: #593e5d;">Praticas de Criptografia</b>
+                                </a>
                             </div>
+                        </div>
+                        <div class="panel-body panel-body-game" style="padding-left: 0px!important;">
 
+                            <div ng-repeat="deckcryptography in deckSuits.cryptography" 
+                                class="col-xs-6 col-sm-4 col-md-3 col-lg-3 card-conucopia"
+                                style="border: 1px #593e5d solid;">
+
+                                <a ng-click="showCardExplain(deckcryptography)" class="ahrefcarddeck">
+
+                                    <div class="card-title">
+                                        <p> {{ deckcryptography.name }} </p>
+                                    </div>
+                                    <div class="card-number">
+                                        <p> <span class="fa fa fa-code"></span> {{ deckcryptography.card }} </p>
+                                    </div>
+                                    <div class="card-description">
+                                        <p> {{ deckcryptography.description }} </p>
+                                    </div>                                
+
+                                </a>
+
+                            </div>
                         </div>
                     </div>
 

@@ -35,36 +35,6 @@ var states = [{
             controller: 'HomeCtrl',
             data: { authorize: true, text: "Paginal Inicial", visible: true, icon: "fa-home" }
         }
-    },
-    {
-        name: 'jogos',
-        state: {
-            url: '/jogos',
-            parent: 'base',
-            templateUrl: 'views/jogos.html',
-            controller: 'JogoCtrl',
-            data: { authorize: true, text: "Jogos", visible: true, icon: "fa-futbol" }
-        }
-    },
-    {
-        name: 'historico',
-        state: {
-            url: '/historico',
-            parent: 'base',
-            templateUrl: 'views/historico.html',
-            controller: 'HistoricoCtrl',
-            data: { authorize: true, text: "Histórico", visible: true, icon: "fa-history" }
-        }
-    },
-    {
-        name: 'perfil',
-        state: {
-            url: '/perfil',
-            parent: 'base',
-            templateUrl: 'views/perfil.html',
-            controller: 'PerfilCtrl',
-            data: { authorize: true, text: "Meu Perfil", visible: true, icon: "fa-user-circle" }
-        }
     }
 ];
 

@@ -1,0 +1,27 @@
+[
+      {
+        "name": "Ramesh",
+        "city": "Hackensack",
+        "state": "NJ"
+      },
+      {
+        "name": "Pradeep",
+        "city": "Hackensack",
+        "state": "NJ"
+      },
+      {
+        "name": "Prabhu",
+        "city": "Fairlawn",
+        "state": "NJ"
+      },
+      {
+        "name": "Prajwa",
+        "city": "Manhatten",
+        "state": "NY"
+      },
+      {
+        "name": "Sashi",
+        "city": "Toranto",
+        "state": "CA"
+      }
+]
