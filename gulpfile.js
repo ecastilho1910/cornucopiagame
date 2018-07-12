@@ -23,7 +23,9 @@ gulp.task('bundle-vendor-css', function () {
     return gulp.src([
         'bower_components/components-font-awesome/css/fontawesome-all.css',
         'bower_components/angular-toastr/dist/angular-toastr.css',
-        'bower_components/angular-loading-bar/build/loading-bar.css'
+        'bower_components/angular-loading-bar/build/loading-bar.css',
+        'bower_components/angular-wizard/dist/angular-wizard.css',
+        'bower_components/isteven-angular-multiselect/isteven-multi-select.css'
     ])
         .pipe(concat('vendor.css'))
         .pipe(cleanCSS())
@@ -54,7 +56,9 @@ gulp.task('bundle-vendor-js', function () {
         'bower_components/angular-timer/dist/angular-timer.js',
         'bower_components/humanize-duration/humanize-duration.js',
         'bower_components/moment/moment.js',
-        'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+        'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+        'bower_components/angular-wizard/dist/angular-wizard.js',
+        'bower_components/isteven-angular-multiselect/isteven-multi-select.js'        
     ])
         .pipe(concat('vendor.js'))
         .pipe(rev())

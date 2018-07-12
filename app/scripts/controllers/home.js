@@ -829,22 +829,54 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "explain": deckselected.explain,
                     "urlPath": "/images/avatares/Spy3.png",
                     "example": deckselected.example,
-                    "feedbackteam": deckselected.feedbackteam
+                    "feedbackteam": deckselected.teamfeedback
                 }
 
                 $scope.fecharRegulamento = function (modalRandom) {
 
                     if (modalRandom.cardgroup === "dadavalidation") {
+                        var currentObjDadavalidation = this.$root.deckSuits.dadavalidation;
+                        var match = _.find(currentObjDadavalidation, function(item) { return item.id == modalRandom.idcard })
+                        if (match) {
+                            match.teamfeedback = modalRandom.feedbackteam;
+                        }
+                        this.$root.deckSuits.dadavalidation = currentObjDadavalidation;                        
+                    }
 
-                        var filterCard = _.where(this.$root.deckSuits.dadavalidation, { id: modalRandom.idcard });
+                    if (modalRandom.cardgroup === "authentication") {
+                        var currentObjauthentication = this.$root.deckSuits.authentication;
+                        var match = _.find(currentObjauthentication, function(item) { return item.id == modalRandom.idcard })
+                        if (match) {
+                            match.teamfeedback = modalRandom.feedbackteam;
+                        }
+                        this.$root.deckSuits.authentication = currentObjauthentication;                        
+                    }
 
-                        this.$root.deckSuits.dadavalidation = _.map(this.$root.deckSuits.dadavalidation, function (obj) {
-                            if (obj.id == modalRandom.idcard) {
-                                obj.feedbackteam = modalRandom.feedbackteam;
-                            }
-                        });
-                      //_.map(this.$root.deckSuits[0], function(data){ return data.feedbackteam = modalRandom.feedbackteam; });
-                        var dsadsads = this.$root.deckSuits.dadavalidation;
+                    if (modalRandom.cardgroup === "sessionmanagement") {
+                        var currentObjsessionmanagement = this.$root.deckSuits.sessionmanagement;
+                        var match = _.find(currentObjsessionmanagement, function(item) { return item.id == modalRandom.idcard })
+                        if (match) {
+                            match.teamfeedback = modalRandom.feedbackteam;
+                        }
+                        this.$root.deckSuits.sessionmanagement = currentObjsessionmanagement;                        
+                    }
+
+                    if (modalRandom.cardgroup === "authorization") {
+                        var currentObjauthorization = this.$root.deckSuits.authorization;
+                        var match = _.find(currentObjauthorization, function(item) { return item.id == modalRandom.idcard })
+                        if (match) {
+                            match.teamfeedback = modalRandom.feedbackteam;
+                        }
+                        this.$root.deckSuits.authorization = currentObjauthorization;                        
+                    }
+
+                    if (modalRandom.cardgroup === "cryptography") {
+                        var currentObjcryptography = this.$root.deckSuits.cryptography;
+                        var match = _.find(currentObjcryptography, function(item) { return item.id == modalRandom.idcard })
+                        if (match) {
+                            match.teamfeedback = modalRandom.feedbackteam;
+                        }
+                        this.$root.deckSuits.cryptography = currentObjcryptography;                        
                     }
 
                     $uibModalInstance.close();

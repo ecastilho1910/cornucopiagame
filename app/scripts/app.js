@@ -27,13 +27,13 @@ var states = [{
         }
     },
     {
-        name: 'paginaInicial',
+        name: 'home',
         state: {
-            url: '/paginainicial',
+            url: '/home',
             parent: 'base',
-            templateUrl: 'views/paginaInicial.html',
+            templateUrl: 'views/home.html',
             controller: 'HomeCtrl',
-            data: { authorize: true, text: "Paginal Inicial", visible: true, icon: "fa-home" }
+            data: { authorize: true, text: "Home", visible: true, icon: "fa-home" }
         }
     }
 ];
@@ -60,11 +60,11 @@ angular.module('app', [
 function config($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
     cfpLoadingBarProvider.parentSelector = '#loading-bar-container';
     cfpLoadingBarProvider.spinnerTemplate = "<div class='spiner sk-spinner-three-bounce'>" +
-        "<div class='sk-bounce1 fa fa-futbol fa-4x'></div>" +
-        "<div class='sk-bounce2 fa fa-futbol fa-4x'></div>" +
-        "<div class='sk-bounce3 fa fa-futbol fa-4x'></div>" +
+        "<div class='sk-bounce1 fa fa-code fa-4x'></div>" +
+        "<div class='sk-bounce2 fa fa-user-secret fa-4x'></div>" +
+        "<div class='sk-bounce3 fa fa-user-times fa-4x'></div>" +
         "</div>";
-    $urlRouterProvider.otherwise('/paginainicial');
+    $urlRouterProvider.otherwise('/home');
 
     angular.forEach(states, function(state) {
         $stateProvider.state(state.name, state.state);

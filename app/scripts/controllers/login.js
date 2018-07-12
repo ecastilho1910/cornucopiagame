@@ -27,7 +27,7 @@ function loginCtrl($scope, $location, autenticacaoService) {
             password: $scope.password,
             rememberMe: $scope.rememberMe
         }).then(function() {
-            $location.path('/paginainicial');
+            $location.path('/home');
         });
     };
 }
