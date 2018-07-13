@@ -32,9 +32,9 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Você inventou um novo ataque contra a Validação de Dados de Entrada e"
                         + " Codificação de Dados de Saída.",
-                    "example": "EX: EXEXEXEXEXEXEXEXEX",
-                    "explain": "XEXEXEXEXEXEXEXEXEXEX",
-                    "teamfeedback": null
+                        "example": "EX: Binladem consegue interceptar uma requisição e ....",
+                        "explain": "Invente um ataque relacionado a validacão de dados",
+                        "teamfeedback": null
                 },
                 {
                     "id": 102,
@@ -46,9 +46,9 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "serviços e infraestrutura nas mensagens de erro ou em mensagens de configuração, "
                         + "ou na presença de arquivos de instalação (padrões ou antigos), ou em evidências "
                         + "de testes, ou em backups ou em exposição de código fonte.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
-                    "teamfeedback": null
+                        "example": "EX: - Expor informações sensíveis nos headers HTTP, URLs, mensagens de erro customizadas, comentários, logs, etc;",
+                        "explain": "Diversos webservers normalmente possuem mensagens de erro com informações sobre a natureza do erro. Isso é bastante útil ao desenvolvedor para compreender aonde está o erro e o porquê do mesmo. A configuração padrão também, em algumas vezes, possui funções de administrador para facilitar a curva de aprendizagem. Entretanto, se este padrão de comportamentos não for alterado em um ambiente fora do desenvolvimento, hackers podem se beneficiar do conhecimento sobre o funcionamento interno da aplicação.",
+                        "teamfeedback": null
                 },
                 {
                     "id": 103,
@@ -62,8 +62,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "dados individuais não foram validados por "
                         + "formato, tipo, intervalo, tamanho e por uma "
                         + "lista de caracteres ou formatos possíveis",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: os dados que chegam na camada de serviço é o que o model esta esperando, campo numerico no front enviando letras e o model não faz essa validação e acaba só quebrando no banco?",
+                    "explain": "A falta de validação de dados de entrada é muitas vezes a causa raiz de vários problemas de segurança. A validação precisa ser aplicada, o desenvolvedor necessita compreender como os dados são compostos/formados. A validação de dados deve garantir que: - A aplicação é alimentada apenas com os dados de entrada permitidos; - Todos os dados de entrada obrigatórios são fornecidos; - O valores associados com o nome do campo/parâmetro são do tipo, formato, alcance, tamanho, etc, esperado.",
                     "teamfeedback": null
                 },
                 {
@@ -75,8 +75,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "campos mal intencionados porque isto não "
                         + "está sendo verificado no contexto de cada "
                         + "usuário e processo.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: um usuario acessar previlegios de outro usuario.",
+                    "explain": "Dados maliciosos podem ser introduzidos voluntariamente. Alguns verificadores de dados de entrada devem depender dos previlegios de cada usuario. - Falsificar tipos de resquests, URLs, cookies, identificadores de sessão, campos ou valores que não validados; - Adicionando , removendo ou duplicando campos da requisição ou valores para explorar o comportamento do código;",
                     "teamfeedback": null
                 },
                 {
@@ -89,8 +89,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "pois elas não estão sendo usadas em "
                         + "todos os lugares, ou a codificação "
                         + "errada está sendo usada.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: ????????",
+                    "explain": "Rotinas centralizadas de dados de saída são uma boa prática de programação, mas ainda desenvolvedores precisam entender como elas funcionam, como utilizá-las e quaisquer limitações existentes. A codificação dos dados de saída são obrigatórias ao manusear dados de fontes não confiáveis. Também deve ser uma verificação obrigatória de segurança quando os dados estiverem saindo para queries para SQL, XML e LDAP e em todo caso quando caracteres especiais arriscados devem ser permitidos como dados de entrada (como < > ' % ( ) + \ \ ' \). ",
                     "teamfeedback": null
                 },
                 {
@@ -102,8 +102,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "centralizadas de validação de dados de "
                         + "entrada pois elas não estão sendo usadas "
                         + "em todos os campos de entrada de dados. ",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: ??????????",
+                    "explain": "Rotinas centralizadas de dados de entrada são uma boa prática de programação. É recomendado sempre que possível utilizar uma lista branca de validação. As listas pretas (blacklists) geralemente são boas para serem utilizadas como complemento, pois podem gerar falsos positivos. Ataques comuns de más implementações de rotinas de validação são buffer overflows, injeção de código e fuzzing.",
                     "teamfeedback": null
                 },
                 {
@@ -120,8 +120,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "mesmo formado que a aplicação usa (ex: "
                         + "canonicalização) antes da validação, ou as "
                         + "variáveis não são fortemente tipadas.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: ?????????????",
+                    "explain": "Sem o conhecimento preciso de codificação de caracteres as rotinas de validação de dados podem ser inadequadas. Os interpretadores podem cada um ser suscetíveis em difirentes formas, à problemas relacionados com a codificação de caracteres perigosos. Técnicas comuns incluem: - Especificação de um conjunto definido de caracteres, como UTF-8, para todas as entradas de dados; - Canonicalização, o que nada mais é do que a codificação de dados para um conjunto comum de caracteres, definidos antes da validação; - Utilizar os componentes do sistema que suportam a expansão de conjuntos de caracteres UTF-8 e validar os dados após a decodificação UTF-8 for concluída.",
                     "teamfeedback": null
                 },
                 {
@@ -133,8 +133,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                         + "centralizadas de tratamento "
                         + "(sanitização) pois elas não estão sendo "
                         + "usadas de forma abrangente.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: ????????????",
+                    "explain": "A sanitização pode ser usada para retirar alguns caracteres não desejáveis de dados de entrada ou sáida. Se a sanitização é parte do processo de validação e codificação, deve ser garantido que nenhum dado de entrada ou saída seja excluído, ou que isso possa ser contornado através da submissão por meio de um diferente canal (ex.GET ao invés de POST) ou plataforma diferente (ex. mobile X desktop).",
                     "teamfeedback": null
                 },
                 {
@@ -143,8 +143,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "card": "9",
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Shamun consegue ignorar as verificações de validação de entrada ou de saída porque as falhas de validação não são rejeitadas e/ou tratadas (sanitização).",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: ????????????",
+                    "explain": "Falhas na validação de dados de entrada sempre devem resultar na rejeição destes. É bastante útil registrar, associando com a identidade do usuário se possível for, e ressaltar estes como possíveis atividades maliciosas para uma análise mais aprofundada, ou como insumo para aplicações de detecção de invasão.",
                     "teamfeedback": null
                 },
                 {
@@ -154,7 +154,7 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Dario consegue explorar a confiabilidade da aplicação em fonte de dados (ex: dados definidos pelo usuário, manipulação de dados armazenados localmente, mudança do estado dos dados em dispositivos clientes, falta de verificação da identidade durante uma validação de dados, como Dario pode fingir ser Colin).",
                     "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "explain": "Gestão de confiança é uma técnica popular para implementar segurança da informação, e especificamente para políticas de controle de acesso. Onde todos dados oriundos de uma aplicação são classificados em grupos com vários níveis de confiança. Ao aplicar a gestão é imperativo garantir que as fontes confiáveis não podem ser falsificadas/enganadas. O golpe pode ser realizado em diferentes formas (por exemplo reflection attack, principal spoof, JSON Hijacking, Registry Poisoning, MITM, XSS). Atacantes que estão identificados como usuários confiáveis ou que estão em uma zona de confiança, onde esta zona possui técnicas de autenticação ruins, podem realizar os mais variados ataques, dependendo de acordo com os serviços (por exemplo Sniffing, Data tempering, Code injection, DoS).",
                     "teamfeedback": null
                 },
                 {
@@ -164,7 +164,7 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Dennis tem o controle sobre validações de entrada de dados, validações de saída de dados ou codificação de saída ou rotinas que ele consegue ignorar/burlar.",
                     "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "explain": "A validação e codificação é algumas vezes realizada em aplicações no cliente ou fontes externas que interagem com o sistema. Esta é uma prática ruim, como as fontes externas são usualmente mais vulneráveis à ataques, elas podem ser enganadas e geralmente são menos responsabilizadas por um comportamento malicioso. De uma forma geral, todas as rotinas de validação e codificação devem ser realizadas no lado do servidor utilizando rotinas robustas, testadas e protegidas.",
                     "teamfeedback": null
                 },
                 {
@@ -173,8 +173,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "card": "Q",
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Geoff consegue injetar dados num dispositivo ou num interpretador no lado do cliente porque uma interface parametrizada não foi usada, ou não foi implementada corretamente, ou os dados não foram codificados corretamente para o contexto proposto, ou não há uma política restritiva para a codificação ou a inclusão de dados.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: COMPO TEXTAREA ENVIANDO TAG HTML.???????",
+                    "explain": "Devido a falhas na verificação, codificação ou sanitização da entrada ou saída de dados no lado do cliente, códigos maliciosos podem ser injetador e tratados como código ao invés de dados, levando à execução de código na aplicação do cliente.",
                     "teamfeedback": null
                 },
                 {
@@ -183,8 +183,8 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
                     "card": "K",
                     "name": "Validação de dados de entrada e codificação de dados de saída.",
                     "description": "Gabe consegue injetar dados num interpretador no lado do servidor (ex: SQL, comandos para o sistema operacional, Xpath, Server JavaScript, SMTP) porque uma interface parametrizada não foi usada ou não foi implementada corretamente.",
-                    "example": "EX: anEXAMPLEHERE",
-                    "explain": "ANEXPLAINHERE",
+                    "example": "EX: SQL INJECTION",
+                    "explain": "Devido a falhas na verificação, codificação ou sanitização da entrada ou saída de dados no lado do servidor, códigos maliciosos podem ser injetador e tratados como código ao invés de dados, levando à execução de código na aplicação do servidor.",
                     "teamfeedback": null
                 }
             ],

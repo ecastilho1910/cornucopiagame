@@ -52,7 +52,7 @@ angular.module('app', [
         'mgo-angular-wizard',
         'isteven-multi-select'
     ]).constant('constant', {
-        'apiBase': 'http://dbo.db1.com.br:8080'
+        'apiBase': 'http://dbo.db1.com.br:8080' //  http://appbolao.db1.com.br:8080  -- http://dbo.db1.com.br:8080
     }).factory('authInterceptor', authInterceptor)
     .config(config)
     .run(run);
