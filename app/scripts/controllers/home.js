@@ -735,21 +735,21 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
         }
     });
 
-    $scope.players = [
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Emershow", maker: "Emerson", selected: false },
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Fusca", maker: "Wagner", selected: false },
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Maikon", maker: "Maikon", selected: false },
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Cachhoeira", maker: "Cachoeira", selected: false },
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Vini", maker: "Vinicius", selected: false },
-        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", name: "Tiuzão", maker: "Edoil", selected: false }
-    ];
+    $rootScope.players = [
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 1, name: "Emerson", selected: false },
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 2, name: "Fusca ", selected: false },
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 3, name: "Maikon", selected: false },
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 4, name: "Ronaldo", selected: false },
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 5, name: "Vinicius", selected: false },
+        { icon: "<i class='fa fa-lg fa-user' style='color: #7a747b;'></i>", id: 6, name: "Edoil", selected: false }
+    ]
 
     $scope.changeStepPlayersToDeckSuitTs = function () {
-        var filtered = _.where($scope.players, { selected: true });
-        // if(filtered.length <= 3){
-        //     toastr.error('Please, choose ate least 4 challengers.');     
-        //     return false;
-        // }
+     var filtered = _.where($scope.players, { selected: true });
+        if(filtered.length <= 3){
+            toastr.error('Please, choose ate least 4 challengers.');     
+            return false;
+        }
         WizardHandler.wizard().next();
     };
 
@@ -801,9 +801,7 @@ function homeCtrl($rootScope, $scope, $q, $timeout, $uibModal, contaService, Wiz
         });
 
         WizardHandler.wizard().next();
-    };
-
-    $rootScope.testeeee = 0;
+    };    
 
     $scope.showCardExplain = function (data) {
         $uibModal.open({
